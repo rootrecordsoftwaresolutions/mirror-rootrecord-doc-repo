@@ -1,6 +1,6 @@
 # Projects in the RootRecord workspace (snapshot)
 
-This page summarizes what typically lives under **`Development/`** when building RootRecord. Paths mirror the internal workspace rules (`Mobile-Development-2026`, `Web-Development-2026`).
+This page summarizes what lives under **`MonoRepo/`** when building RootRecord.
 
 ## Mobile monorepo (`Mobile/`)
 
@@ -10,8 +10,11 @@ This page summarizes what typically lives under **`Development/`** when building
 | `business-manager-app/` | Business Manager — operations, finance, scheduling |
 | `token-manager-app/` | Token Manager — Solana mobile wallet UX |
 | `account-hub-app/` | Account Hub — account spine + subscriptions shortcuts |
+| `blocknotes-android/` | Block Notes — native Kotlin Minecraft companion |
+| `root-goals-mobile/` | Root Goals — Android client |
+| `kilauea-alerts-android/` | Kīlauea Alerts — native Kotlin volcano alerts |
 
-Shared tooling: **`pnpm`**, staged releases under **`builds/`** per app token.
+Shared tooling: **`pnpm`** (Capacitor apps), **Gradle** (native Kotlin apps), staged releases under **`builds/`** per app token.
 
 ## Web workspace (`Web/`)
 
@@ -23,7 +26,16 @@ Shared tooling: **`pnpm`**, staged releases under **`builds/`** per app token.
 | `cloudflare/shared/` | Shared Worker TS utilities |
 | `main/` | **rootrecord.info** — Cloudflare Pages static site |
 
-**Not a source tree for shipping Solana Tools Next.js** — that lives in **`RootRecord/solana-rootrecord-site`** only.
+Solana Tools Next.js source is at **`solana-rootrecord-site/`** at the monorepo root.
+
+## Minecraft plugins (`Minecraft/`)
+
+| Path | Project |
+|------|---------|
+| `plugins/blocknotes/` | Unified Block Notes + RootStat Paper plugin |
+| `plugins/rootstat/` | Optional standalone linking plugin |
+| `plugins/rootrecord-common/` | Shared `plugins/RootRecord/` config helpers |
+| `server/` | Local Paper 26.1.2 dev server |
 
 ## This documentation repo (`Doc-Repo/`)
 

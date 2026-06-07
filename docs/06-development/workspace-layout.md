@@ -1,11 +1,15 @@
-# Workspace layout (Mobile + Web)
+# Workspace layout (MonoRepo)
 
-The **Development** workspace typically contains **two git roots** (do not assume a single monorepo):
+The active workspace is a single git root: `MonoRepo/`.
 
-| Repo | Role |
+| Path | Role |
 |------|------|
-| **Mobile-Development-2026** | pnpm monorepo: Weather, Business, Token Manager, Account Hub, shared packages |
-| **Web-Development-2026** | Cloudflare Workers (`rootrecord-primary`, `rootrecord-license`, shared libs), marketing Pages (`Web/main/`), Solana **notes** (not the shipping Next app source) |
+| `Mobile/` | Android/Capacitor apps, mobile docs, release build scripts |
+| `Web/` | Cloudflare Workers, Pages marketing site, web app deploy tooling |
+| `Web/apps/kilauea-alerts-web/` | Kilauea web app (Pages project `rootrecord-kilauea-web`) |
+| `solana-rootrecord-site/` | Solana Tools Next.js app source |
+| `Minecraft/` | Paper plugins (BlockNotes, RootStat) + local dev server |
+| `Doc-Repo/` | Product/platform documentation |
 
 ## Mobile paths (typical)
 
@@ -13,6 +17,9 @@ The **Development** workspace typically contains **two git roots** (do not assum
 - `business-manager-app/` — Business Manager
 - `token-manager-app/` — Token Manager
 - `account-hub-app/` — Account Hub
+- `blocknotes-android/` — Block Notes (native Kotlin / Compose)
+- `root-goals-mobile/` — Root Goals Android
+- `kilauea-alerts-android/` — Kīlauea Alerts (native Kotlin)
 - `builds/` — Staged release APK/AAB outputs per app token
 
 ## Web paths (typical)
@@ -20,10 +27,18 @@ The **Development** workspace typically contains **two git roots** (do not assum
 - `cloudflare/rootrecord-primary/` — **Canonical** primary Worker
 - `cloudflare/shared/` — Shared TS modules
 - `main/` — rootrecord.info Pages site
+- `cloudflare/rootrecord-api-blocknotes/` — Block Notes + Realm API shard
+- `cloudflare/rootrecord-api-goals/` — Root Goals API shard
+- `cloudflare/rootrecord-api-kilauea/` — Kīlauea API shard
+
+## Minecraft (`Minecraft/`)
+
+- `plugins/blocknotes/` — production Paper plugin (heartbeat + linking + stats)
+- `server/` — local Paper 26.1.2 + `start_paper.bat`
 
 ## Solana site source
 
-The **Next.js Solana Tools app** is **not** “just another folder” here—clone **`RootRecord/solana-rootrecord-site`** separately.
+The **Next.js Solana Tools app** source is in `solana-rootrecord-site/`.
 
 ## Mental map
 
